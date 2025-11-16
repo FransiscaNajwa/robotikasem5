@@ -1,0 +1,17 @@
+D:\SPK\Prak4_RNO\Prak4_RNO\obj\Debug\Prak4_RNO.csproj.AssemblyReference.cache
+D:\SPK\Prak4_RNO\Prak4_RNO\obj\Debug\MainWindow.g.cs
+D:\SPK\Prak4_RNO\Prak4_RNO\obj\Debug\App.g.cs
+D:\SPK\Prak4_RNO\Prak4_RNO\obj\Debug\Prak4_RNO_MarkupCompile.cache
+D:\SPK\Prak4_RNO\Prak4_RNO\bin\Debug\Prak4_RNO.exe.config
+D:\SPK\Prak4_RNO\Prak4_RNO\bin\Debug\Prak4_RNO.exe
+D:\SPK\Prak4_RNO\Prak4_RNO\bin\Debug\Prak4_RNO.pdb
+D:\SPK\Prak4_RNO\Prak4_RNO\obj\Debug\MainWindow.baml
+D:\SPK\Prak4_RNO\Prak4_RNO\obj\Debug\Prak4_RNO.g.resources
+D:\SPK\Prak4_RNO\Prak4_RNO\obj\Debug\Prak4_RNO.Properties.Resources.resources
+D:\SPK\Prak4_RNO\Prak4_RNO\obj\Debug\Prak4_RNO.csproj.GenerateResource.cache
+D:\SPK\Prak4_RNO\Prak4_RNO\obj\Debug\Prak4_RNO.csproj.CoreCompileInputs.cache
+D:\SPK\Prak4_RNO\Prak4_RNO\obj\Debug\Prak4_RNO.exe
+D:\SPK\Prak4_RNO\Prak4_RNO\obj\Debug\Prak4_RNO.pdb
+D:\SPK\Prak4_RNO\Prak4_RNO\bin\Debug\System.IO.Ports.dll
+D:\SPK\Prak4_RNO\Prak4_RNO\bin\Debug\System.IO.Ports.xml
+D:\SPK\Prak4_RNO\Prak4_RNO\obj\Debug\Prak4_RNO.csproj.Up2Date

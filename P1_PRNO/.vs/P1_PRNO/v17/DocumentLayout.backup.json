@@ -1,0 +1,52 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\SPK\\P1_PRNO\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CFBCF6B5-039A-4AB2-A1F0-45F7D6AF58E5}|P1_PRNO\\P1_PRNO.csproj|d:\\spk\\p1_prno\\p1_prno\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFBCF6B5-039A-4AB2-A1F0-45F7D6AF58E5}|P1_PRNO\\P1_PRNO.csproj|solutionrelative:p1_prno\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFBCF6B5-039A-4AB2-A1F0-45F7D6AF58E5}|P1_PRNO\\P1_PRNO.csproj|d:\\spk\\p1_prno\\p1_prno\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CFBCF6B5-039A-4AB2-A1F0-45F7D6AF58E5}|P1_PRNO\\P1_PRNO.csproj|solutionrelative:p1_prno\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\SPK\\P1_PRNO\\P1_PRNO\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "P1_PRNO\\MainWindow.xaml",
+              "ToolTip": "D:\\SPK\\P1_PRNO\\P1_PRNO\\MainWindow.xaml",
+              "RelativeToolTip": "P1_PRNO\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-20T17:08:30.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\SPK\\P1_PRNO\\P1_PRNO\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "P1_PRNO\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\SPK\\P1_PRNO\\P1_PRNO\\MainWindow.xaml.cs",
+              "RelativeToolTip": "P1_PRNO\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAIwI0AAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T17:08:29.831Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

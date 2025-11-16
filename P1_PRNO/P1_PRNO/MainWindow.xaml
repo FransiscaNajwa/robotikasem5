@@ -1,0 +1,225 @@
+﻿<Window x:Class="P1_PRNO.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kontrol Robot Arm (2-DOF Kinematics)" Height="789" Width="880">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <GroupBox Header="Servo 0 (Base)" Grid.Row="0" Grid.Column="0" Margin="5">
+                <StackPanel>
+                    <Slider x:Name="sliderServo0" Minimum="0" Maximum="180" Value="90"
+                            Tag="0"
+                            ValueChanged="SliderControl_ValueChanged"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
+                        <Label Content="Sudut (°)" Width="60"/>
+                        <TextBox x:Name="txtSudut0" Width="60" Text="90" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <Label Content="Pulse (0°)" Width="80"/>
+                        <TextBox Width="60" Text="500" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <Label Content="Pulse (180°)" Width="80"/>
+                        <TextBox Width="60" Text="2500" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
+                        <Label Content="Pulse (us)" Width="70"/>
+                        <TextBox x:Name="txtInterp0" Width="60" Text="1500" IsReadOnly="True"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Servo 2 (Lengan Atas)" Grid.Row="0" Grid.Column="1" Margin="5">
+                <StackPanel>
+                    <Slider x:Name="sliderServo2" Minimum="-90" Maximum="90" Value="0"
+                            Tag="2"
+                            ValueChanged="SliderControl_ValueChanged"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
+                        <Label Content="Sudut (°)" Width="60"/>
+                        <TextBox x:Name="txtSudut2" Width="60" Text="0" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <Label Content="Pulse (-90°)" Width="80"/>
+                        <TextBox Width="60" Text="500" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <Label Content="Pulse (+90°)" Width="80"/>
+                        <TextBox Width="60" Text="2500" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
+                        <Label Content="Pulse (us)" Width="70"/>
+                        <TextBox x:Name="txtInterp2" Width="60" Text="1500" IsReadOnly="True"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Servo 3 (Pergelangan)" Grid.Row="0" Grid.Column="2" Margin="5">
+                <StackPanel>
+                    <Slider x:Name="sliderServo3" Minimum="-90" Maximum="90" Value="0"
+                            Tag="3"
+                            ValueChanged="SliderControl_ValueChanged"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
+                        <Label Content="Sudut (°)" Width="60"/>
+                        <TextBox x:Name="txtSudut3" Width="60" Text="0" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <Label Content="Pulse (-90°)" Width="80"/>
+                        <TextBox Width="60" Text="500" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <Label Content="Pulse (+90°)" Width="80"/>
+                        <TextBox Width="60" Text="2500" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
+                        <Label Content="Pulse (us)" Width="70"/>
+                        <TextBox x:Name="txtInterp3" Width="60" Text="1500" IsReadOnly="True"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Servo 1 (Rata Air)" Grid.Row="1" Grid.Column="0" Margin="5">
+                <StackPanel>
+                    <Slider x:Name="sliderServo1" Minimum="0" Maximum="180" Value="45"
+                            Tag="1"
+                            ValueChanged="SliderControl_ValueChanged"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
+                        <Label Content="Sudut (°)" Width="60"/>
+                        <TextBox x:Name="txtSudut1" Width="60" Text="45" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <Label Content="Pulse (0°)" Width="80"/>
+                        <TextBox Width="60" Text="500" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <Label Content="Pulse (180°)" Width="80"/>
+                        <TextBox Width="60" Text="2500" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
+                        <Label Content="Pulse (us)" Width="70"/>
+                        <TextBox x:Name="txtInterp1" Width="60" Text="2000" IsReadOnly="True"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Robot Parameter &amp; FK Output" Grid.Row="1" Grid.Column="1" Margin="5">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <Label Content="Lengan a1 (mm)" Width="100"/>
+                        <TextBox x:Name="m_a1" Width="80" Text="100"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <Label Content="Lengan a2 (mm)" Width="100"/>
+                        <TextBox x:Name="m_a2" Width="80" Text="100"/>
+                    </StackPanel>
+
+                    <Label Content="Forward Kinematic Result" FontWeight="Bold" Margin="0,10,0,2"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <Label Content="Px (mm)" Width="60"/>
+                        <TextBox x:Name="m_fkPx" Width="80" Text="0.0" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <Label Content="Py (mm)" Width="60"/>
+                        <TextBox x:Name="m_fkPy" Width="80" Text="0.0" IsReadOnly="True"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Jepit (Servo 4)" Grid.Row="1" Grid.Column="2" Margin="5">
+                <StackPanel>
+                    <Slider Minimum="0" Maximum="200" Value="140" Margin="0,5,0,0"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
+                        <Label Content="Posisi" Width="50"/>
+                        <TextBox Width="60" Text="140"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <Label Content="Open (P770)" Width="80"/>
+                        <TextBox Width="60" Text="770" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <Label Content="Close (P2200)" Width="80"/>
+                        <TextBox Width="60" Text="2200" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+                        <Button x:Name="BtnClaw_Open" Content="Open Claw" Width="100" Click="BtnClaw_Open_Click"/>
+                        <Button x:Name="BtnClaw_Close" Content="Close Claw" Width="100" Margin="5,0,0,0" Click="BtnClaw_Close_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="5">
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <Label Content="COM PORT" Width="80"/>
+                    <ComboBox x:Name="cmbPorts" Width="100"/>
+                    <Button x:Name="btnConnect" Content="Connect" Width="100" Margin="10,0,0,0" Click="BtnConnect_Click"/>
+                    <Button Content="Close Port" Width="100" Margin="5,0,0,0" Click="BtnClose_Click"/>
+                </StackPanel>
+            </StackPanel>
+
+            <GroupBox Header="Inverse Kinematic Calculation" Grid.Row="3" Grid.ColumnSpan="3" Margin="5">
+                <StackPanel>
+                    <Label Content="Target Posisi (Px, Py) untuk IK" FontWeight="Bold" Margin="0,0,0,2"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Target Px (mm)" Width="100"/>
+                        <TextBox x:Name="m_targetPx" Width="80" Text="0.0"/>
+                        <Label Content="Target Py (mm)" Width="100" Margin="10,0,0,0"/>
+                        <TextBox x:Name="m_targetPy" Width="80" Text="0.0"/>
+                    </StackPanel>
+
+                    <Grid Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" Margin="5">
+                            <Label Content="Solusi 1 (Elbow Up)" FontWeight="Bold"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,2">
+                                <Label Content="Teta 1 (°)" Width="60"/>
+                                <TextBox x:Name="m_satu" Width="80" Text="0" IsReadOnly="True"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,2">
+                                <Label Content="Teta 2 (°)" Width="60"/>
+                                <TextBox x:Name="m_dua" Width="80" Text="0" IsReadOnly="True"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,10">
+                                <Button x:Name="cal_inv1" Content="Calculate" Width="80" Click="cal_inv1_Click" />
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Margin="5">
+                            <Label Content="Solusi 2 (Elbow Down)" FontWeight="Bold"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,2">
+                                <Label Content="Teta 1 (°)" Width="60"/>
+                                <TextBox x:Name="m_satu1" Width="80" Text="0" IsReadOnly="True"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,2">
+                                <Label Content="Teta 2 (°)" Width="60"/>
+                                <TextBox x:Name="m_dua2" Width="80" Text="0" IsReadOnly="True"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,10">
+                                <Button x:Name="cal_inv2" Content="Calculate" Width="80" Click="cal_inv2_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Right" Margin="5">
+                <Button Content="Exit" Width="80" Margin="5"/>
+                <Button Content="Cancel" Width="80" Margin="5"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>

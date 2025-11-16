@@ -1,0 +1,52 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\SPK\\Praktikum5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F6931A67-16F9-4E55-9BDD-5C5186F59F38}|Praktikum5\\Praktikum5.csproj|d:\\spk\\praktikum5\\praktikum5\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6931A67-16F9-4E55-9BDD-5C5186F59F38}|Praktikum5\\Praktikum5.csproj|solutionrelative:praktikum5\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6931A67-16F9-4E55-9BDD-5C5186F59F38}|Praktikum5\\Praktikum5.csproj|D:\\SPK\\Praktikum5\\praktikum5\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6931A67-16F9-4E55-9BDD-5C5186F59F38}|Praktikum5\\Praktikum5.csproj|solutionrelative:praktikum5\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\SPK\\Praktikum5\\Praktikum5\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Praktikum5\\MainWindow.xaml",
+              "ToolTip": "D:\\SPK\\Praktikum5\\Praktikum5\\MainWindow.xaml",
+              "RelativeToolTip": "Praktikum5\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-02T09:22:05.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\SPK\\Praktikum5\\Praktikum5\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Praktikum5\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\SPK\\Praktikum5\\Praktikum5\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Praktikum5\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAHACAAAAAAAAAAAAAIgCAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T09:22:05.465Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+﻿<Window x:Class="traj.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:traj"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        mc:Ignorable="d"
+        Title="Praktikum 5: Trajectory Planning (with Robot Control)" Height="838" Width="1031">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <lvc:CartesianChart Grid.Column="0" x:Name="robotChart" Series="{Binding RobotSeries}" Background="WhiteSmoke" DisableAnimations="True" Hoverable="True" Zoom="Xy" Pan="Xy" DataTooltip="{x:Null}">
+
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Title="X (mm)" 
+                          LabelFormatter="{Binding XFormatter}"
+                          MinValue="-350" MaxValue="350">
+                    <lvc:Axis.Separator>
+                        <lvc:Separator Step="50" Stroke="Black" StrokeThickness="0.5"/>
+                    </lvc:Axis.Separator>
+                </lvc:Axis>
+            </lvc:CartesianChart.AxisX>
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis Title="Y (mm)"
+                          LabelFormatter="{Binding YFormatter}"
+                          MinValue="0" MaxValue="350">
+                    <lvc:Axis.Separator>
+                        <lvc:Separator Step="50" Stroke="Black" StrokeThickness="0.5"/>
+                    </lvc:Axis.Separator>
+                </lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+        </lvc:CartesianChart>
+
+        <StackPanel Grid.Column="1" Margin="10,0,0,0">
+
+            <GroupBox Header="Initialization" Padding="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Content="a1:"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Name="txtA1" Text="120"/>
+                    <Label Grid.Row="0" Grid.Column="2" Content="Titik (n):"/>
+                    <TextBox Grid.Row="0" Grid.Column="3" Name="txtNPoints" Text="25"/>
+                    <Label Grid.Row="1" Grid.Column="0" Content="a2:"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Name="txtA2" Text="130"/>
+                    <Label Grid.Row="1" Grid.Column="2" Content="Waktu (t):"/>
+                    <TextBox Grid.Row="1" Grid.Column="3" Name="txtTimeMs" Text="1000"/>
+                    <Label Grid.Row="2" Grid.Column="0" Content="a3:"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Name="txtA3" Text="85"/>
+
+                    <RadioButton Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Name="rbTimePath" Content="Time/Path" IsChecked="True" Click="RbTimePath_Click"/>
+                    <RadioButton Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Name="rbTimeTrack" Content="Time/Track" Click="RbTimeTrack_Click"/>
+                    <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Name="btnClearPath" Content="Clear Path" Click="BtnClearPath_Click" Margin="0,5,0,0"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="Joint Space Representation" Padding="5">
+                <StackPanel>
+                    <TextBlock Text="Initial Posture (teta1, teta2, teta3):"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" Name="txtTheta1Init" Text="0"/>
+                        <TextBox Grid.Column="1" Name="txtTheta2Init" Text="0"/>
+                        <TextBox Grid.Column="2" Name="txtTheta3Init" Text="0"/>
+                    </Grid>
+                    <TextBlock Text="Final Posture (teta1, teta2, teta3):"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" Name="txtTheta1Final" Text="45"/>
+                        <TextBox Grid.Column="1" Name="txtTheta2Final" Text="45"/>
+                        <TextBox Grid.Column="2" Name="txtTheta3Final" Text="-30"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Name="btnJointCalc" Content="Calculate" Click="BtnJointCalc_Click" Margin="2"/>
+                        <Button Grid.Column="1" Name="btnJointRun" Content="Run" Click="BtnJointRun_Click" Margin="2"/>
+                    </Grid>
+
+                    <TextBox Name="txtJointOutput" Height="80" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" FontFamily="Consolas"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Work Space Representation" Padding="5">
+                <StackPanel>
+                    <TextBlock Text="Initial Posture (qx, qy, orientasi):"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" Name="txtQxInit" Text="30"/>
+                        <TextBox Grid.Column="1" Name="txtQyInit" Text="0"/>
+                        <TextBox Grid.Column="2" Name="txtOrientInit" Text="0"/>
+                    </Grid>
+                    <TextBlock Text="Final Posture (qx, qy, orientasi):"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" Name="txtQxFinal" Text="0"/>
+                        <TextBox Grid.Column="1" Name="txtQyFinal" Text="30"/>
+                        <TextBox Grid.Column="2" Name="txtOrientFinal" Text="90"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Name="btnWorkCalc" Content="Calculate" Click="BtnWorkCalc_Click" Margin="2"/>
+                        <Button Grid.Column="1" Name="btnWorkRun" Content="Run" Click="BtnWorkRun_Click" Margin="2"/>
+                    </Grid>
+
+                    <TextBox Name="txtWorkOutput" Height="80" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" FontFamily="Consolas"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Robot AL5A Control" Padding="5" Margin="0,5,0,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <!-- COM Port -->
+                                <RowDefinition Height="Auto"/>
+                                <!-- Button Connect / Origin -->
+                                <RowDefinition Height="Auto"/>
+                                <!-- Servo 1 -->
+                                <RowDefinition Height="Auto"/>
+                                <!-- Info -->
+                            </Grid.RowDefinitions>
+
+                            <!-- === BARIS 0: COM PORT === -->
+                            <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                Orientation="Horizontal" Margin="0,0,15,5">
+                                <TextBlock Text="COM Port:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                <ComboBox x:Name="cmbPorts" Width="80" Margin="0,0,5,0"/>
+                                <Button x:Name="btnConnectRobot" Content="Connect Robot"
+                                         Width="100" Click="BtnConnectRobot_Click"/>
+                                <TextBlock x:Name="txtRobotStatus" Text="Disconnected"
+                                     Foreground="Red" Margin="10,0,0,0"
+                                      VerticalAlignment="Center" FontWeight="Bold"/>
+                            </StackPanel>
+
+                            <!-- === BARIS 1: BUTTON CONTROL === -->
+                            <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                    Orientation="Horizontal" Margin="0,5,15,5">
+                                <Button x:Name="btnSendToRobot" Content="Send to Robot" Width="100"
+                    Click="BtnSendToRobot_Click" Margin="0,0,5,0"/>
+                                <Button x:Name="btnRobotOrigin" Content="Robot Origin" Width="90"
+                    Click="BtnRobotOrigin_Click"/>
+                            </StackPanel>
+
+                            <!-- === BARIS 2: SERVO 1 (RATA AIR) === -->
+                            <GroupBox Header="Servo 1 (Rata Air)" Grid.Row="2" Grid.Column="0"
+                  Grid.ColumnSpan="2" Margin="5,10,5,0">
+                                <StackPanel>
+                                    <!-- Slider Servo 1 -->
+                                    <Slider x:Name="sliderServo1"
+                        Minimum="500"
+                        Maximum="2500"
+                        Value="1500"
+                        TickFrequency="100"
+                        IsSnapToTickEnabled="True"
+                        ValueChanged="sliderServo1_ValueChanged"/>
+
+                                    <!-- Kotak nilai Pulse -->
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0"
+                            VerticalAlignment="Center" HorizontalAlignment="Left">
+                                        <Label Content="Pulse:" Width="50" VerticalAlignment="Center"/>
+                                        <TextBox x:Name="txtServo1Value"
+                             Width="80"
+                             Text="1500"
+                             IsReadOnly="True"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Margin="5,0,0,0"
+                             Background="#FFF8F8F8"
+                             BorderBrush="#FFAAAAAA"
+                             BorderThickness="1"
+                             FontWeight="Bold"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </GroupBox>
+
+                            <!-- === BARIS 3: ROBOT INFO === -->
+                            <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                    Orientation="Vertical" Margin="5,10,0,0">
+                                <TextBlock x:Name="txtRobotInfo" Text="Robot ready..."
+                       FontSize="10" Foreground="Gray"/>
+                                <TextBlock x:Name="txtLastCommand" Text="Last command: None"
+                       FontSize="9" Foreground="DarkBlue"/>
+                            </StackPanel>
+                        </Grid>
+                    </GroupBox>
+
+
+                    <Button x:Name="btnExit" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Width="80" Content="Exit" Margin="0,10,0,0" Click="BtnExit_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

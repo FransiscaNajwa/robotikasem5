@@ -1,0 +1,153 @@
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\traj.csproj.AssemblyReference.cache
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\App.g.cs
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\traj_MarkupCompile.cache
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\bin\Debug\net9.0-windows\traj.exe
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\bin\Debug\net9.0-windows\traj.deps.json
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\bin\Debug\net9.0-windows\traj.runtimeconfig.json
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\bin\Debug\net9.0-windows\traj.dll
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\bin\Debug\net9.0-windows\traj.pdb
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\bin\Debug\net9.0-windows\LiveCharts.dll
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\bin\Debug\net9.0-windows\LiveCharts.Wpf.dll
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\MainWindow.g.cs
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\traj_MarkupCompile.lref
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\MainWindow.baml
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\traj.g.resources
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\traj.GeneratedMSBuildEditorConfig.editorconfig
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\traj.AssemblyInfoInputs.cache
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\traj.AssemblyInfo.cs
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\traj.csproj.CoreCompileInputs.cache
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\traj.csproj.Up2Date
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\traj.dll
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\refint\traj.dll
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\traj.pdb
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\traj.genruntimeconfig.cache
+D:\PENS '23\SMT 5\prak rno\p5\traj\traj\obj\Debug\net9.0-windows\ref\traj.dll
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\traj.csproj.AssemblyReference.cache
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\MainWindow.baml
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\MainWindow.g.cs
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\App.g.cs
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\traj_MarkupCompile.cache
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\traj.g.resources
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\traj.GeneratedMSBuildEditorConfig.editorconfig
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\traj.AssemblyInfoInputs.cache
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\traj.AssemblyInfo.cs
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\traj.csproj.CoreCompileInputs.cache
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\traj.dll
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\refint\traj.dll
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\traj.pdb
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\traj.exe
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\traj.deps.json
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\traj.runtimeconfig.json
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\traj.dll
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\traj.pdb
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\LiveCharts.dll
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\LiveCharts.Wpf.dll
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\System.IO.Ports.dll
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\android-arm\native\libSystem.IO.Ports.Native.so
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\android-arm64\native\libSystem.IO.Ports.Native.so
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\android-x64\native\libSystem.IO.Ports.Native.so
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\android-x86\native\libSystem.IO.Ports.Native.so
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\linux-bionic-arm64\native\libSystem.IO.Ports.Native.so
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\linux-bionic-x64\native\libSystem.IO.Ports.Native.so
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\linux-musl-arm\native\libSystem.IO.Ports.Native.so
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\linux-musl-arm64\native\libSystem.IO.Ports.Native.so
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\linux-musl-x64\native\libSystem.IO.Ports.Native.so
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\maccatalyst-arm64\native\libSystem.IO.Ports.Native.dylib
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\maccatalyst-x64\native\libSystem.IO.Ports.Native.dylib
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\osx-arm64\native\libSystem.IO.Ports.Native.dylib
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\unix\lib\net9.0\System.IO.Ports.dll
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\bin\Debug\net9.0-windows\runtimes\win\lib\net9.0\System.IO.Ports.dll
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\traj.csproj.Up2Date
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\traj.genruntimeconfig.cache
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\ref\traj.dll
+D:\PENS '23\SMT 5\prak rno\p5\traj - Copy\traj\obj\Debug\net9.0-windows\traj_MarkupCompile.lref
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\traj.exe
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\traj.deps.json
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\traj.runtimeconfig.json
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\traj.dll
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\traj.pdb
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\LiveCharts.dll
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\LiveCharts.Wpf.dll
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\System.IO.Ports.dll
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\android-arm\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\android-arm64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\android-x64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\android-x86\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-bionic-arm64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-bionic-x64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-musl-arm\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-musl-arm64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-musl-x64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\maccatalyst-arm64\native\libSystem.IO.Ports.Native.dylib
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\maccatalyst-x64\native\libSystem.IO.Ports.Native.dylib
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\osx-arm64\native\libSystem.IO.Ports.Native.dylib
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\unix\lib\net9.0\System.IO.Ports.dll
+D:\SPK\trajectory\trajectory\traj\bin\Debug\net9.0-windows\runtimes\win\lib\net9.0\System.IO.Ports.dll
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\traj.csproj.AssemblyReference.cache
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\MainWindow.g.cs
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\App.g.cs
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\traj_MarkupCompile.cache
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\traj_MarkupCompile.lref
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\MainWindow.baml
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\traj.g.resources
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\traj.GeneratedMSBuildEditorConfig.editorconfig
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\traj.AssemblyInfoInputs.cache
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\traj.AssemblyInfo.cs
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\traj.csproj.CoreCompileInputs.cache
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\traj.csproj.Up2Date
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\traj.dll
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\refint\traj.dll
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\traj.pdb
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\traj.genruntimeconfig.cache
+D:\SPK\trajectory\trajectory\traj\obj\Debug\net9.0-windows\ref\traj.dll
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\traj.exe
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\traj.deps.json
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\traj.runtimeconfig.json
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\traj.dll
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\traj.pdb
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\LiveCharts.dll
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\LiveCharts.Wpf.dll
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\System.IO.Ports.dll
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\android-arm\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\android-arm64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\android-x64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\android-x86\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-bionic-arm64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-bionic-x64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-musl-arm\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-musl-arm64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-musl-x64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\maccatalyst-arm64\native\libSystem.IO.Ports.Native.dylib
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\maccatalyst-x64\native\libSystem.IO.Ports.Native.dylib
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\osx-arm64\native\libSystem.IO.Ports.Native.dylib
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\unix\lib\net9.0\System.IO.Ports.dll
+D:\SPK\trajectory1\trajectory\traj\bin\Debug\net9.0-windows\runtimes\win\lib\net9.0\System.IO.Ports.dll
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\traj.csproj.AssemblyReference.cache
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\MainWindow.g.cs
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\App.g.cs
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\traj_MarkupCompile.cache
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\traj_MarkupCompile.lref
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\MainWindow.baml
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\traj.g.resources
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\traj.GeneratedMSBuildEditorConfig.editorconfig
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\traj.AssemblyInfoInputs.cache
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\traj.AssemblyInfo.cs
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\traj.csproj.CoreCompileInputs.cache
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\traj.csproj.Up2Date
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\traj.dll
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\refint\traj.dll
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\traj.pdb
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\traj.genruntimeconfig.cache
+D:\SPK\trajectory1\trajectory\traj\obj\Debug\net9.0-windows\ref\traj.dll

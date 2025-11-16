@@ -1,0 +1,14 @@
+D:\SPK\Prak3\Prak3\bin\Debug\Prak3.exe.config
+D:\SPK\Prak3\Prak3\bin\Debug\Prak3.exe
+D:\SPK\Prak3\Prak3\bin\Debug\Prak3.pdb
+D:\SPK\Prak3\Prak3\obj\Debug\Prak3.csproj.AssemblyReference.cache
+D:\SPK\Prak3\Prak3\obj\Debug\MainWindow.baml
+D:\SPK\Prak3\Prak3\obj\Debug\MainWindow.g.cs
+D:\SPK\Prak3\Prak3\obj\Debug\App.g.cs
+D:\SPK\Prak3\Prak3\obj\Debug\Prak3_MarkupCompile.cache
+D:\SPK\Prak3\Prak3\obj\Debug\Prak3.g.resources
+D:\SPK\Prak3\Prak3\obj\Debug\Prak3.Properties.Resources.resources
+D:\SPK\Prak3\Prak3\obj\Debug\Prak3.csproj.GenerateResource.cache
+D:\SPK\Prak3\Prak3\obj\Debug\Prak3.csproj.CoreCompileInputs.cache
+D:\SPK\Prak3\Prak3\obj\Debug\Prak3.exe
+D:\SPK\Prak3\Prak3\obj\Debug\Prak3.pdb

@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\SPK\\2doflagi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F651EEBD-E081-4D4D-9B80-F65B14193121}|2doflagi\\2doflagi.csproj|d:\\spk\\2doflagi\\2doflagi\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F651EEBD-E081-4D4D-9B80-F65B14193121}|2doflagi\\2doflagi.csproj|solutionrelative:2doflagi\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F651EEBD-E081-4D4D-9B80-F65B14193121}|2doflagi\\2doflagi.csproj|d:\\spk\\2doflagi\\2doflagi\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F651EEBD-E081-4D4D-9B80-F65B14193121}|2doflagi\\2doflagi.csproj|solutionrelative:2doflagi\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\SPK\\2doflagi\\2doflagi\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "2doflagi\\MainWindow.xaml",
+              "ToolTip": "D:\\SPK\\2doflagi\\2doflagi\\MainWindow.xaml",
+              "RelativeToolTip": "2doflagi\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-20T15:48:56.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\SPK\\2doflagi\\2doflagi\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "2doflagi\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\SPK\\2doflagi\\2doflagi\\MainWindow.xaml.cs",
+              "RelativeToolTip": "2doflagi\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAFABAAAAAAAAAAAYwHABAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T15:48:51.922Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

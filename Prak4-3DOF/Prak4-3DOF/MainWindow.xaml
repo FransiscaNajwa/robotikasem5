@@ -1,0 +1,248 @@
+﻿<Window x:Class="Prak4_3DOF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prak4_3DOF"
+        mc:Ignorable="d"
+        Title="3DOF Robot Arm Controller" Height="850" Width="1040"
+        Background="White" WindowStartupLocation="CenterScreen"
+        MinWidth="800" MinHeight="600"
+        Loaded="ArmLength_WindowLoaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" 
+                      Margin="0,10,10,-167" Background="White">
+            <WrapPanel Margin="5" Orientation="Horizontal">
+
+                <GroupBox Header="Connection" Margin="5" Padding="10" BorderBrush="LightGray" BorderThickness="1" MinWidth="600">
+                    <Grid VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="COM Port:" VerticalAlignment="Center" FontWeight="Bold"/>
+                        <ComboBox x:Name="cmbPorts" Grid.Column="1" Width="120" Height="30" VerticalAlignment="Center" Margin="5,0"/>
+                        <Button x:Name="btnConnect" Grid.Column="2" Content="CONNECT" Width="100" Height="30" VerticalAlignment="Center" Margin="5,0" Click="BtnConnect_Click" FontWeight="Bold"/>
+                        <Button x:Name="btnRefresh" Grid.Column="3" Content="Refresh" Width="100" Height="30" VerticalAlignment="Center" Margin="5,0" Click="btnRefresh_Click"/>
+                        <Label x:Name="lblConnectionStatus" Grid.Column="4" Content="Status: DISCONNECTED" VerticalAlignment="Center" Margin="20,0,0,0" Foreground="Crimson" FontWeight="Bold"/>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="Servo 0" Margin="5" Padding="10" BorderBrush="LightGray" BorderThickness="1" Width="280">
+                    <StackPanel>
+                        <Slider x:Name="sliderSudut0" ValueChanged="sliderSudut0_ValueChanged" Minimum="0" Maximum="180" Value="90" Margin="0,5"/>
+                        <UniformGrid Columns="4" Margin="0,10">
+                            <StackPanel Margin="2">
+                                <TextBlock Text="θ1 (°)" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtSudut0" Text="90" TextAlignment="Center" Height="25" IsReadOnly="True"/>
+                            </StackPanel>
+                            <StackPanel Margin="2">
+                                <TextBlock Text="Min" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtMin0" Text="660" TextAlignment="Center" Height="25" TextChanged="txtMin0_TextChanged"/>
+                            </StackPanel>
+                            <StackPanel Margin="2">
+                                <TextBlock Text="Max" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtMax0" Text="2260" TextAlignment="Center" Height="25" TextChanged="txtMax0_TextChanged"/>
+                            </StackPanel>
+                            <StackPanel Margin="2">
+                                <TextBlock Text="Pulse (μs)" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtInterpolasi0" Text="1460" TextAlignment="Center" Height="25" IsReadOnly="True"/>
+                            </StackPanel>
+                        </UniformGrid>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Servo 1" Margin="5" Padding="10" BorderBrush="LightGray" BorderThickness="1" Width="280">
+                    <StackPanel>
+                        <Slider x:Name="sliderSudut1" ValueChanged="sliderSudut1_ValueChanged" Minimum="0" Maximum="90" Value="45" Margin="0,5"/>
+                        <UniformGrid Columns="4" Margin="0,10">
+                            <StackPanel Margin="2">
+                                <TextBlock Text="θ1/Offset (°)" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtSudut1" Text="45" TextAlignment="Center" Height="25" IsReadOnly="True"/>
+                            </StackPanel>
+                            <StackPanel Margin="2">
+                                <TextBlock Text="Min" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtMin1" Text="1000" TextAlignment="Center" Height="25" TextChanged="txtMin1_TextChanged"/>
+                            </StackPanel>
+                            <StackPanel Margin="2">
+                                <TextBlock Text="Max" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtMax1" Text="2000" TextAlignment="Center" Height="25" TextChanged="txtMax1_TextChanged"/>
+                            </StackPanel>
+                            <StackPanel Margin="2">
+                                <TextBlock Text="Pulse (μs)" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtInterpolasi1" Text="1500" TextAlignment="Center" Height="25" IsReadOnly="True"/>
+                            </StackPanel>
+                        </UniformGrid>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Servo 2" Margin="5" Padding="10" BorderBrush="LightGray" BorderThickness="1" Width="280">
+                    <StackPanel>
+                        <Slider x:Name="sliderSudut2" ValueChanged="sliderSudut2_ValueChanged" Minimum="-90" Maximum="90" Value="0" Margin="0,5"/>
+                        <UniformGrid Columns="4" Margin="0,10">
+                            <StackPanel Margin="2">
+                                <TextBlock Text="θ2 (°)" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtSudut2" Text="0" TextAlignment="Center" Height="25" IsReadOnly="True"/>
+                            </StackPanel>
+                            <StackPanel Margin="2">
+                                <TextBlock Text="Min" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtMin2" Text="550" TextAlignment="Center" Height="25" TextChanged="txtMin2_TextChanged"/>
+                            </StackPanel>
+                            <StackPanel Margin="2">
+                                <TextBlock Text="Max" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtMax2" Text="2440" TextAlignment="Center" Height="25" TextChanged="txtMax2_TextChanged"/>
+                            </StackPanel>
+                            <StackPanel Margin="2">
+                                <TextBlock Text="Pulse (μs)" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtInterpolasi2" Text="1495" TextAlignment="Center" Height="25" IsReadOnly="True"/>
+                            </StackPanel>
+                        </UniformGrid>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Servo 3" Margin="5" Padding="10" BorderBrush="LightGray" BorderThickness="1" Width="280">
+                    <StackPanel>
+                        <Slider x:Name="sliderSudut3" ValueChanged="sliderSudut3_ValueChanged" Minimum="-90" Maximum="90" Value="0" Margin="0,5"/>
+                        <UniformGrid Columns="4" Margin="0,10">
+                            <StackPanel Margin="2">
+                                <TextBlock Text="θ3 (°)" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtSudut3" Text="0" TextAlignment="Center" Height="25" IsReadOnly="True"/>
+                            </StackPanel>
+                            <StackPanel Margin="2">
+                                <TextBlock Text="Min" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtMin3" Text="540" TextAlignment="Center" Height="25" TextChanged="txtMin3_TextChanged"/>
+                            </StackPanel>
+                            <StackPanel Margin="2">
+                                <TextBlock Text="Max" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtMax3" Text="2380" TextAlignment="Center" Height="25" TextChanged="txtMax3_TextChanged"/>
+                            </StackPanel>
+                            <StackPanel Margin="2">
+                                <TextBlock Text="Pulse (μs)" FontSize="10" TextAlignment="Center"/>
+                                <TextBox x:Name="txtInterpolasi3" Text="1460" TextAlignment="Center" Height="25" IsReadOnly="True"/>
+                            </StackPanel>
+                        </UniformGrid>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Gripper" Margin="5" Padding="10" BorderBrush="LightGray" BorderThickness="1" Width="280">
+                    <StackPanel>
+                        <Button x:Name="btnServo4Toggle" Content="BUKA" Width="150" Height="50" Margin="0,15" HorizontalAlignment="Center" Click="btnServo4Toggle_Click" FontWeight="Bold"/>
+                        <Label x:Name="lblServo4Status" Content="Status: TERTUTUP" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14" Foreground="Crimson"/>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Forward Kinematics" Margin="5" Padding="10" BorderBrush="LightGray" BorderThickness="1" MinWidth="320">
+                    <StackPanel>
+                        <TextBlock Text="Arm Length Parameters:" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <UniformGrid Columns="2" Margin="0,5">
+                            <Label Content="Panjang a1 (mm):" VerticalAlignment="Center" FontWeight="Bold"/>
+                            <TextBox x:Name="txtA1" Text="105" TextAlignment="Center" Height="25" TextChanged="ArmLength_TextChanged"/>
+                        </UniformGrid>
+                        <UniformGrid Columns="2" Margin="0,5">
+                            <Label Content="Panjang a2 (mm):" VerticalAlignment="Center" FontWeight="Bold"/>
+                            <TextBox x:Name="txtA2" Text="110" TextAlignment="Center" Height="25" TextChanged="ArmLength_TextChanged"/>
+                        </UniformGrid>
+                        <UniformGrid Columns="2" Margin="0,5">
+                            <Label Content="Panjang a3 (mm):" VerticalAlignment="Center" FontWeight="Bold"/>
+                            <TextBox x:Name="txtA3" Text="87" TextAlignment="Center" Height="25" TextChanged="ArmLength_TextChanged"/>
+                        </UniformGrid>
+                        <Separator Margin="0,15,0,10"/>
+                        <TextBlock Text="End Effector Position:" FontWeight="Bold" Margin="0,0,0,5"/>
+                        <UniformGrid Columns="2" Margin="0,5">
+                            <Label Content="Posisi Qx (mm):" VerticalAlignment="Center" FontWeight="Bold"/>
+                            <TextBox x:Name="txtQx" Text="0" TextAlignment="Center" Height="25" IsReadOnly="True" Background="#FFE0E0E0"/>
+                        </UniformGrid>
+                        <UniformGrid Columns="2" Margin="0,5">
+                            <Label Content="Posisi Qy (mm):" VerticalAlignment="Center" FontWeight="Bold"/>
+                            <TextBox x:Name="txtQy" Text="0" TextAlignment="Center" Height="25" IsReadOnly="True" Background="#FFE0E0E0"/>
+                        </UniformGrid>
+                        <UniformGrid Columns="2" Margin="0,5">
+                            <Label Content="Orientasi φ (°):" VerticalAlignment="Center" FontWeight="Bold"/>
+                            <TextBox x:Name="txtOrientasi" Text="0" TextAlignment="Center" Height="25" IsReadOnly="True" Background="#FFE0E0E0"/>
+                        </UniformGrid>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Inverse Kinematics" Margin="5" Padding="10" BorderBrush="LightGray" BorderThickness="1" MinWidth="650">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5">
+                            <TextBlock Text="Target Koordinat Input:" FontWeight="Bold" Margin="0,0,0,5"/>
+                            <UniformGrid Columns="3" Margin="0,5">
+                                <StackPanel Margin="5,0">
+                                    <Label Content="Qx (mm):" HorizontalAlignment="Center"/>
+                                    <TextBox x:Name="txtTargetQx" Text="250" TextAlignment="Center" Height="30"/>
+                                </StackPanel>
+                                <StackPanel Margin="5,0">
+                                    <Label Content="Qy (mm):" HorizontalAlignment="Center"/>
+                                    <TextBox x:Name="txtTargetQy" Text="100" TextAlignment="Center" Height="30"/>
+                                </StackPanel>
+                                <StackPanel Margin="5,0">
+                                    <Label Content="φ (°):" HorizontalAlignment="Center"/>
+                                    <TextBox x:Name="txtTargetOrientasi" Text="45" TextAlignment="Center" Height="30"/>
+                                </StackPanel>
+                            </UniformGrid>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="1" Grid.Column="0" Margin="10,5">
+                            <TextBlock Text="Solusi 1 (Elbow Up)" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                            <UniformGrid Columns="2" Margin="0,5">
+                                <Label Content="θ1 (°):"/>
+                                <TextBox x:Name="m_satu" IsReadOnly="True" Background="#FFE0E0E0"/>
+                            </UniformGrid>
+                            <UniformGrid Columns="2" Margin="0,5">
+                                <Label Content="θ2 (°):"/>
+                                <TextBox x:Name="m_dua" IsReadOnly="True" Background="#FFE0E0E0"/>
+                            </UniformGrid>
+                            <UniformGrid Columns="2" Margin="0,5">
+                                <Label Content="θ3 (°):"/>
+                                <TextBox x:Name="m_tiga" IsReadOnly="True" Background="#FFE0E0E0"/>
+                            </UniformGrid>
+                            <UniformGrid Columns="2" Margin="0,15,0,0">
+                                <Button x:Name="btnCalculate1" Content="Calculate" Margin="2" Height="35" Click="btnCalculate1_Click" FontWeight="Bold"/>
+                                <Button Content="Run" Margin="2" Height="35" IsEnabled="False" FontWeight="Bold"/>
+                            </UniformGrid>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="1" Grid.Column="1" Margin="10,5">
+                            <TextBlock Text="Solusi 2 (Elbow Down)" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                            <UniformGrid Columns="2" Margin="0,5">
+                                <Label Content="θ1 (°):"/>
+                                <TextBox x:Name="m_satu1" IsReadOnly="True" Background="#FFE0E0E0"/>
+                            </UniformGrid>
+                            <UniformGrid Columns="2" Margin="0,5">
+                                <Label Content="θ2 (°):"/>
+                                <TextBox x:Name="m_dua2" IsReadOnly="True" Background="#FFE0E0E0"/>
+                            </UniformGrid>
+                            <UniformGrid Columns="2" Margin="0,5">
+                                <Label Content="θ3 (°):"/>
+                                <TextBox x:Name="m_tiga2" IsReadOnly="True" Background="#FFE0E0E0"/>
+                            </UniformGrid>
+                            <UniformGrid Columns="2" Margin="0,15,0,0">
+                                <Button x:Name="btnCalculate2" Content="Calculate" Margin="2" Height="35" Click="btnCalculate2_Click" FontWeight="Bold"/>
+                                <Button Content="Run" Margin="2" Height="35" IsEnabled="False" FontWeight="Bold"/>
+                            </UniformGrid>
+                        </StackPanel>
+                    </Grid>
+                </GroupBox>
+
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
