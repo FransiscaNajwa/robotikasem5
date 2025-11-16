@@ -39,3 +39,4 @@ D:\SPK\polahatiproject\polahatiproject\obj\Debug\net9.0-windows\refint\polahatip
 D:\SPK\polahatiproject\polahatiproject\obj\Debug\net9.0-windows\polahatiproject.pdb
 D:\SPK\polahatiproject\polahatiproject\obj\Debug\net9.0-windows\polahatiproject.genruntimeconfig.cache
 D:\SPK\polahatiproject\polahatiproject\obj\Debug\net9.0-windows\ref\polahatiproject.dll
+D:\SPK\polahatiproject\polahatiproject\obj\Debug\net9.0-windows\polahatiproject.sourcelink.json

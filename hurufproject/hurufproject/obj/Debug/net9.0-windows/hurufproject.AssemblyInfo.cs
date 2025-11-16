@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("hurufproject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fdc9209e3b04b76f9777a96ba273ed3559088012")]
 [assembly: System.Reflection.AssemblyProductAttribute("hurufproject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("hurufproject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -523,9 +523,9 @@ namespace polahatiproject
             int p0 = MapAngleToPulse(deg0, 0.0, 180.0, pwmMinCh0, pwmMaxCh0);
             int p2 = MapAngleToPulse(deg2, -90.0, 90.0, pwmMinCh2, pwmMaxCh2);
             int p3 = MapAngleToPulse(deg3, -90.0, 90.0, pwmMinCh3, pwmMaxCh3);
-            SendRawCommand($"#{ch0} P{p0} T{timeMs}");
-            SendRawCommand($"#{ch2} P{p2} T{timeMs}");
-            SendRawCommand($"#{ch3} P{p3} T{timeMs}");
+            // === KIRIM DALAM SATU PERINTAH ===
+            string cmd = $"#{ch0}P{p0} #{ch2}P{p2} #{ch3}P{p3} T{timeMs}\r\n";
+            _serialPort.Write(cmd);
         }
         private void SliderGripper_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
@@ -710,19 +710,30 @@ namespace polahatiproject
 
             int totalPoints = heart_t1.Length;
 
-            // Simpan trajectory
+            ReadLinkLengths();   // WAJIB sebelum FK
+
             for (int i = 0; i < totalPoints; i++)
             {
-                // VALIDASI SUDUT PROJECT
-                if (!ValidateJointAngles(heart_t1[i], heart_t2[i], heart_t3[i], out string reason))
+                // 1️⃣ HITUNG FK → posisi end-effector
+                var (qx, qy) = KinematicsSolver.Forward(
+                    _a1Val, _a2Val, _a3Val,
+                    heart_t1[i], heart_t2[i], heart_t3[i]
+                );
+
+                double phi = heart_t1[i] + heart_t2[i] + heart_t3[i];
+
+                // 2️⃣ CEK JANGKAUAN FISIK
+                if (!IsWorkspacePoseReachable(qx, qy, phi, out string wreason))
                 {
                     MessageBox.Show(
-                        $"Titik {i} tidak valid!\n" +
-                        $"t1={heart_t1[i]}, t2={heart_t2[i]}, t3={heart_t3[i]}\n" +
-                        $"Alasan: {reason}",
-                        "Sudut Project Di Luar Batas",
+                        $"Titik {i} berada di luar jangkauan workspace!\n\n" +
+                        $"Qx = {qx:F1} mm\n" +
+                        $"Qy = {qy:F1} mm\n\n" +
+                        $"Alasan: {wreason}",
+                        "ERROR: Target di Luar Jangkauan",
                         MessageBoxButton.OK,
-                        MessageBoxImage.Error);
+                        MessageBoxImage.Error
+                    );
 
                     _teta1Traj.Clear();
                     _teta2Traj.Clear();
@@ -730,7 +741,26 @@ namespace polahatiproject
                     ListJointSpace.Items.Clear();
                     return;
                 }
-            
+
+                // 3️⃣ Validasi sudut servo
+                if (!ValidateJointAngles(heart_t1[i], heart_t2[i], heart_t3[i], out string jreason))
+                {
+                    MessageBox.Show(
+                        $"Sudut servo tidak valid di titik {i}!\n" +
+                        $"Alasan: {jreason}",
+                        "ERROR: Sudut Tidak Valid",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error
+                    );
+
+                    _teta1Traj.Clear();
+                    _teta2Traj.Clear();
+                    _teta3Traj.Clear();
+                    ListJointSpace.Items.Clear();
+                    return;
+                }
+
+                // 4️⃣ Simpan trajectory
                 _teta1Traj.Add(heart_t1[i]);
                 _teta2Traj.Add(heart_t2[i]);
                 _teta3Traj.Add(heart_t3[i]);
@@ -740,18 +770,15 @@ namespace polahatiproject
                 );
             }
 
-            // SET INTERVAL TIMER (benar)
+            // 5️⃣ Set waktu
             if (totalPoints > 0)
             {
                 double timePerPoint = _mT / totalPoints;
-
-                if (timePerPoint < 1)
-                    timePerPoint = 1;
-
+                if (timePerPoint < 1) timePerPoint = 1;
                 _motionTimer.Interval = TimeSpan.FromMilliseconds(timePerPoint);
             }
 
-            // gambar di canvas
+            // 6️⃣ Gambar path di canvas
             DrawPathFromJointTrajectory();
 
             MessageBox.Show("Trajectory HEART berhasil dibuat!");
@@ -790,13 +817,13 @@ namespace polahatiproject
             // Stop animasi (WAJIB)
             _motionTimer.Stop();
 
-            double p0 = Interpolate(start_t1, 0, 2500, 180, 500);
-            double p2 = Interpolate(start_t2, -90, 2500, 90, 500);
-            double p3 = Interpolate(start_t3, -90, 2500, 90, 500);
+            // Mapping sudut → PWM dengan fungsi yang BENAR
+            int p0 = MapAngleToPulse(start_t1, 0.0, 180.0, pwmMinCh0, pwmMaxCh0);
+            int p2 = MapAngleToPulse(start_t2, -90.0, 90.0, pwmMinCh2, pwmMaxCh2);
+            int p3 = MapAngleToPulse(start_t3, -90.0, 90.0, pwmMinCh3, pwmMaxCh3);
 
-            _serialPort.Write($"#0 P{(int)p0} T500\r\n");
-            _serialPort.Write($"#2 P{(int)p2} T500\r\n");
-            _serialPort.Write($"#3 P{(int)p3} T500\r\n");
+            string cmd = $"#0P{p0} #2P{p2} #3P{p3} T500\r\n";
+            _serialPort.Write(cmd);
 
             // Update simulasi WPF (WAJIB)
             ArmDraw(start_t1, start_t2, start_t3);

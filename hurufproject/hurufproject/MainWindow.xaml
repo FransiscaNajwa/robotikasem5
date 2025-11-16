@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:hurufproject"
         mc:Ignorable="d"
         Title="Project Trajectory"
-        Width="800"
-        Height="680"
+        Width="875"
+        Height="795"
         ResizeMode="NoResize">
 
     <Grid Margin="10">
@@ -110,115 +110,160 @@
             </GroupBox>
 
         </StackPanel>
-
         <!-- ======================== RIGHT PANEL ======================== -->
-        <StackPanel Grid.Column="1">
-            <GroupBox Header="Joint Space Representation" Padding="5" Margin="0,0,0,10">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,5,0">
-                        <Label Content="Initial Posture (θ1, θ2, θ3):"/>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="TxtTeta1_0" Text="0" Width="40" Margin="2"/>
-                            <TextBox x:Name="TxtTeta2_0" Text="0" Width="40" Margin="2"/>
-                            <TextBox x:Name="TxtTeta3_0" Text="0" Width="40" Margin="2"/>
+        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+
+                <GroupBox Header="Joint Space Representation" Padding="5" Margin="0,0,0,10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Kiri -->
+                        <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,5,0">
+                            <Label Content="Initial Posture (θ1, θ2, θ3):"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="TxtTeta1_0" Text="0" Width="40" Margin="2"/>
+                                <TextBox x:Name="TxtTeta2_0" Text="0" Width="40" Margin="2"/>
+                                <TextBox x:Name="TxtTeta3_0" Text="0" Width="40" Margin="2"/>
+                            </StackPanel>
+
+                            <Label Content="Final Posture (θ1, θ2, θ3):"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="TxtTeta1_1" Text="45" Width="40" Margin="2"/>
+                                <TextBox x:Name="TxtTeta2_1" Text="45" Width="40" Margin="2"/>
+                                <TextBox x:Name="TxtTeta3_1" Text="-30" Width="40" Margin="2"/>
+                            </StackPanel>
                         </StackPanel>
-                        <Label Content="Final Posture (θ1, θ2, θ3):"/>
+
+                        <!-- Kanan -->
+                        <StackPanel Grid.Row="0" Grid.Column="1">
+                            <Label Content="Trajectory Generated:"/>
+                            <ListBox x:Name="ListJointSpace" Height="100"/>
+                        </StackPanel>
+
+                        <!-- Tombol -->
+                        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,10,0,0">
+                            <Button x:Name="BtnCalcJoint" Content="Calculate" Width="80" Margin="2"/>
+                            <Button x:Name="BtnRunJoint" Content="Run" Width="80" Margin="2"/>
+                        </StackPanel>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="Work Space Representation" Padding="5" Margin="0,0,0,10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Kiri -->
+                        <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,5,0">
+                            <Label Content="Initial Posture (Px, Py, Φ):"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="TxtQx_0" Text="0" Width="40" Margin="2"/>
+                                <TextBox x:Name="TxtQy_0" Text="0" Width="40" Margin="2"/>
+                                <TextBox x:Name="TxtOrientasi_0" Text="0" Width="40" Margin="2"/>
+                            </StackPanel>
+
+                            <Label Content="Final Posture (Px, Py, Φ):"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="TxtQx_1" Text="0" Width="40" Margin="2"/>
+                                <TextBox x:Name="TxtQy_1" Text="0" Width="40" Margin="2"/>
+                                <TextBox x:Name="TxtOrientasi_1" Text="0" Width="40" Margin="2"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <!-- Kanan -->
+                        <StackPanel Grid.Row="0" Grid.Column="1">
+                            <Label Content="Trajectory Generated:"/>
+                            <ListBox x:Name="ListWorkSpace" Height="100"/>
+                        </StackPanel>
+
+                        <!-- Tombol -->
+                        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,10,0,0">
+                            <Button x:Name="BtnCalcWork" Content="Calculate" Width="80" Margin="2"/>
+                            <Button x:Name="BtnRunWork" Content="Run" Width="80" Margin="2"/>
+                        </StackPanel>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="PROJECT POLA HATI" Padding="8" Margin="0,0,0,10">
+                    <StackPanel HorizontalAlignment="Center">
+
+                        <!-- Tombol hitung trajectory hati -->
+                        <Button x:Name="BtnCalcProject" 
+                Content="Calculate Project" 
+                Width="130" 
+                Margin="3"/>
+
+                        <!-- Tombol jalankan trajectory hati -->
+                        <Button x:Name="BtnRunProject" 
+                Content="Run" 
+                Width="80" 
+                Margin="3"/>
+
+                        <!-- 🔥 Tombol baru: Start Position -->
+                        <Button x:Name="BtnProjectStartPos"
+                Content="Start Position"
+                Width="130"
+                Margin="3"/>
+                    </StackPanel>
+                </GroupBox>
+
+
+                <!-- === Jepit === -->
+                <GroupBox Header="Jepit" Padding="5" Margin="0,0,0,10">
+                    <StackPanel>
+                        <Slider x:Name="SliderGripper" Minimum="0" Maximum="200" Value="140" Tag="4" ValueChanged="SliderGripper_ValueChanged"/>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,5">
+                            <Label Content="mm" Width="50"/>
+                            <TextBox x:Name="txtClawMM" Width="50" Text="140"/>
+                        </StackPanel>
+
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="TxtTeta1_1" Text="45" Width="40" Margin="2"/>
-                            <TextBox x:Name="TxtTeta2_1" Text="45" Width="40" Margin="2"/>
-                            <TextBox x:Name="TxtTeta3_1" Text="-30" Width="40" Margin="2"/>
+                            <Label Content="Min" Width="50"/>
+                            <TextBox x:Name="txtClawMin" Width="60" Text="2200"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Maks" Width="50"/>
+                            <TextBox x:Name="txtClawMax" Width="60" Text="770"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Interpolasi" Width="70"/>
+                            <TextBox x:Name="txtClawInterp" Width="60" Text="1583"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,5">
+                            <Button x:Name="BtnClaw_Open" Content="Open Claw" Width="100" Click="BtnClaw_Open_Click"/>
+                            <Button x:Name="BtnClaw_Close" Content="Close Claw" Width="100" Margin="5,0,0,0" Click="BtnClaw_Close_Click"/>
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel Grid.Row="0" Grid.Column="1">
-                        <Label Content="Trajectory Generated:"/>
-                        <ListBox x:Name="ListJointSpace" Height="100"/>
-                    </StackPanel>
-                    <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                                Orientation="Horizontal"
-                                HorizontalAlignment="Right"
-                                Margin="0,10,0,0">
-                        <Button x:Name="BtnCalcJoint" Content="Calculate" Width="80" Margin="2,5"/>
-                        <Button x:Name="BtnRunJoint" Content="Run" Width="80" Margin="2,5"/>
-                    </StackPanel>
-                </Grid>
-            </GroupBox>
+                </GroupBox>
 
-            <!-- ================= Work Space Representation ================= -->
-            <GroupBox Header="Work Space Representation" Padding="5" Margin="0,0,0,10">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-
-                    <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,5,0">
-                        <Label Content="Initial Posture (Px, Py, Φ):"/>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="TxtQx_0" Text="0" Width="40" Margin="2"/>
-                            <TextBox x:Name="TxtQy_0" Text="0" Width="40" Margin="2"/>
-                            <TextBox x:Name="TxtOrientasi_0" Text="0" Width="40" Margin="2"/>
-                        </StackPanel>
-                        <Label Content="Final Posture (Px, Py, Φ):"/>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="TxtQx_1" Text="0" Width="40" Margin="2"/>
-                            <TextBox x:Name="TxtQy_1" Text="0" Width="40" Margin="2"/>
-                            <TextBox x:Name="TxtOrientasi_1" Text="0" Width="40" Margin="2"/>
-                        </StackPanel>
-                    </StackPanel>
-
-                    <StackPanel Grid.Row="0" Grid.Column="1">
-                        <Label Content="Trajectory Generated:"/>
-                        <ListBox x:Name="ListWorkSpace" Height="100"/>
-                    </StackPanel>
-
-                    <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                                Orientation="Horizontal"
-                                HorizontalAlignment="Right"
-                                Margin="0,10,0,0">
-                        <Button x:Name="BtnCalcWork" Content="Calculate" Width="80" Margin="2,5"/>
-                        <Button x:Name="BtnRunWork" Content="Run" Width="80" Margin="2,5"/>
-                    </StackPanel>
-                </Grid>
-            </GroupBox>
-
-            <GroupBox Header="PROJECT HURUF" Padding="8" Margin="0,0,0,10">
-                <StackPanel>
-
-                    <!-- Tombol Project seperti MFC -->
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,8">
-                        <Button x:Name="BtnCalcProject" Content="Calculate Project" Width="130" Margin="3"/>
-                        <Button x:Name="BtnStartPos" Content="Start Pos" Width="80" Margin="3"/>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="BtnOrigin2" Content="Origin" Width="80" Margin="3"/>
-                        <Button x:Name="BtnRunProject" Content="Run" Width="80" Margin="3"/>
-                    </StackPanel>
-
-                    <!-- Slider gripper -->
-                    <StackPanel Margin="10,15,10,0">
-                        <Label Content="Gripper" HorizontalAlignment="Center"/>
-                        <Slider x:Name="SliderGripper"
-                        Minimum="0" Maximum="180" Value="90"
-                        TickFrequency="10" IsSnapToTickEnabled="True"/>
-                    </StackPanel>
-
-                </StackPanel>
-            </GroupBox>
-
-            <Button x:Name="BtnExit" Content="Exit" HorizontalAlignment="Right" Width="100" Padding="5,2"/>
-        </StackPanel>
+                <Button x:Name="BtnExit" Content="Exit" HorizontalAlignment="Right" Width="100" Padding="5,2"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>
