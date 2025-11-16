@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace polahatiproject
+namespace hurufproject
 {
     public partial class MainWindow : Window
     {
@@ -523,9 +523,9 @@ namespace polahatiproject
             int p0 = MapAngleToPulse(deg0, 0.0, 180.0, pwmMinCh0, pwmMaxCh0);
             int p2 = MapAngleToPulse(deg2, -90.0, 90.0, pwmMinCh2, pwmMaxCh2);
             int p3 = MapAngleToPulse(deg3, -90.0, 90.0, pwmMinCh3, pwmMaxCh3);
-            SendRawCommand($"#{ch0} P{p0} T{timeMs}");
-            SendRawCommand($"#{ch2} P{p2} T{timeMs}");
-            SendRawCommand($"#{ch3} P{p3} T{timeMs}");
+            // === KIRIM DALAM SATU PERINTAH ===
+            string cmd = $"#{ch0}P{p0} #{ch2}P{p2} #{ch3}P{p3} T{timeMs}\r\n";
+            _serialPort.Write(cmd);
         }
         private void SliderGripper_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
@@ -680,101 +680,88 @@ namespace polahatiproject
         private void BtnCalcProject_Click(object sender, RoutedEventArgs e)
         {
             ListWorkSpace.Items.Clear();
-            _teta1Traj.Clear();
-            _teta2Traj.Clear();
-            _teta3Traj.Clear();
+            _qxTraj.Clear();
+            _qyTraj.Clear();
+            _orientasiTraj.Clear();
 
-            double[] heart_t1 =
+            ReadLinkLengths();
+
+            // DATA HURUF W DALAM WORKSPACE (isi nilai Anda sendiri)
+            double[] pxW = { 46, 60, 75, 90, 100 };
+            double[] pyW = { 240, 190, 220, 190, 240 };
+            double[] phiW = { 90, 90, 90, 90, 90 };
+
+            int total = pxW.Length;
+
+            for (int i = 0; i < total; i++)
             {
-                118, 115, 114, 114, 114,
-                120, 125, 131, 140, 139,
-                139, 139, 139, 136, 135,
-                135, 133, 131, 129, 118
-            };
+                double qx = pxW[i];
+                double qy = pyW[i];
+                double phi = phiW[i];
 
-            double[] heart_t2 =
-            {
-                -21, -18, -20, -23, -23,
-                -33, -39, -47, -54, -52,
-                -49, -48, -49, -48, -47,
-                -46, -46, -46, -49, -21
-            };
-
-            double[] heart_t3 =
-            {
-                -49, -45, -41, -41, -46,
-                -47, -47, -48, -48, -48,
-                -47, -44, -36, -29, -25,
-                -24, -20, -13, -10, -49
-            };
-
-            int totalPoints = heart_t1.Length;
-
-            // Simpan trajectory
-            for (int i = 0; i < totalPoints; i++)
-            {
-                // VALIDASI SUDUT PROJECT
-                if (!ValidateJointAngles(heart_t1[i], heart_t2[i], heart_t3[i], out string reason))
+                // 1️⃣ Validasi workspace
+                if (!IsWorkspacePoseReachable(qx, qy, phi, out string reason))
                 {
-                    MessageBox.Show(
-                        $"Titik {i} tidak valid!\n" +
-                        $"t1={heart_t1[i]}, t2={heart_t2[i]}, t3={heart_t3[i]}\n" +
-                        $"Alasan: {reason}",
-                        "Sudut Project Di Luar Batas",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-
-                    _teta1Traj.Clear();
-                    _teta2Traj.Clear();
-                    _teta3Traj.Clear();
-                    ListJointSpace.Items.Clear();
+                    MessageBox.Show($"Titik {i} tidak bisa dicapai: {reason}");
+                    _qxTraj.Clear();
+                    _qyTraj.Clear();
+                    _orientasiTraj.Clear();
+                    ListWorkSpace.Items.Clear();
                     return;
                 }
 
-                _teta1Traj.Add(heart_t1[i]);
-                _teta2Traj.Add(heart_t2[i]);
-                _teta3Traj.Add(heart_t3[i]);
+                // 2️⃣ Hitung IK
+                var (t1, t2, t3) = ComputeInverseKinematicAngles(qx, qy, phi);
 
-                ListJointSpace.Items.Add(
-                    $"{i,3}: {heart_t1[i],6:F1} {heart_t2[i],6:F1} {heart_t3[i],6:F1}"
-                );
+                // 3️⃣ Validasi sudut servo
+                if (!ValidateJointAngles(t1, t2, t3, out string jreason))
+                {
+                    MessageBox.Show($"IK invalid pada titik {i}: {jreason}");
+                    _qxTraj.Clear();
+                    _qyTraj.Clear();
+                    _orientasiTraj.Clear();
+                    ListWorkSpace.Items.Clear();
+                    return;
+                }
+
+                // 4️⃣ Simpan
+                _qxTraj.Add(qx);
+                _qyTraj.Add(qy);
+                _orientasiTraj.Add(phi);
+
+                ListWorkSpace.Items.Add($"{i,3}: {qx,6:F1} {qy,6:F1} {phi,6:F1}");
             }
 
-            // SET INTERVAL TIMER (benar)
-            if (totalPoints > 0)
-            {
-                double timePerPoint = _mT / totalPoints;
+            // 5️⃣ Waktu animasi
+            double stepTime = _mT / total;
+            if (stepTime < 1) stepTime = 1;
+            _motionTimer.Interval = TimeSpan.FromMilliseconds(stepTime);
 
-                if (timePerPoint < 1)
-                    timePerPoint = 1;
+            // 6️⃣ Gambar path workspace
+            DrawPathFromWorkTrajectory();
 
-                _motionTimer.Interval = TimeSpan.FromMilliseconds(timePerPoint);
-            }
-
-            // gambar di canvas
-            DrawPathFromJointTrajectory();
-
-            MessageBox.Show("Trajectory HEART berhasil dibuat!");
+            MessageBox.Show("Trajectory huruf W berhasil dibuat!");
         }
+
+
         private void BtnRunProject_Click(object sender, RoutedEventArgs e)
         {
-            if (!UpdateAndParseInputs()) return;
-
-            if (_teta1Traj.Count == 0)
+            if (_qxTraj.Count == 0)
             {
-                MessageBox.Show("Hitung trajectory HEART dulu dengan Calculate Project.");
+                MessageBox.Show("Hitung trajectory huruf W dulu!");
                 return;
             }
 
             _trajectoryIndex = 0;
-            _spaceMode = 0;
+            _spaceMode = 1;   // ⚠️ workspace mode
 
-            int timeInterval = (int)(_mT / _teta1Traj.Count);
-            if (timeInterval < 1) timeInterval = 1;
+            int stepTime = (int)(_mT / _qxTraj.Count);
+            if (stepTime < 1) stepTime = 1;
 
-            _motionTimer.Interval = TimeSpan.FromMilliseconds(timeInterval);
+            _motionTimer.Interval = TimeSpan.FromMilliseconds(stepTime);
             _motionTimer.Start();
         }
+
         private void BtnProjectStartPos_Click(object sender, RoutedEventArgs e)
         {
             if (_serialPort == null || !_serialPort.IsOpen)
@@ -790,13 +777,13 @@ namespace polahatiproject
             // Stop animasi (WAJIB)
             _motionTimer.Stop();
 
-            double p0 = Interpolate(start_t1, 0, 2500, 180, 500);
-            double p2 = Interpolate(start_t2, -90, 2500, 90, 500);
-            double p3 = Interpolate(start_t3, -90, 2500, 90, 500);
+            // Mapping sudut → PWM dengan fungsi yang BENAR
+            int p0 = MapAngleToPulse(start_t1, 0.0, 180.0, pwmMinCh0, pwmMaxCh0);
+            int p2 = MapAngleToPulse(start_t2, -90.0, 90.0, pwmMinCh2, pwmMaxCh2);
+            int p3 = MapAngleToPulse(start_t3, -90.0, 90.0, pwmMinCh3, pwmMaxCh3);
 
-            _serialPort.Write($"#0 P{(int)p0} T500\r\n");
-            _serialPort.Write($"#2 P{(int)p2} T500\r\n");
-            _serialPort.Write($"#3 P{(int)p3} T500\r\n");
+            string cmd = $"#0P{p0} #2P{p2} #3P{p3} T500\r\n";
+            _serialPort.Write(cmd);
 
             // Update simulasi WPF (WAJIB)
             ArmDraw(start_t1, start_t2, start_t3);

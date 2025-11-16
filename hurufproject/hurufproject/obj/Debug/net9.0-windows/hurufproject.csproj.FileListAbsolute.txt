@@ -39,3 +39,4 @@ D:\SPK\hurufproject\hurufproject\obj\Debug\net9.0-windows\refint\hurufproject.dl
 D:\SPK\hurufproject\hurufproject\obj\Debug\net9.0-windows\hurufproject.pdb
 D:\SPK\hurufproject\hurufproject\obj\Debug\net9.0-windows\hurufproject.genruntimeconfig.cache
 D:\SPK\hurufproject\hurufproject\obj\Debug\net9.0-windows\ref\hurufproject.dll
+D:\SPK\hurufproject\hurufproject\obj\Debug\net9.0-windows\hurufproject.sourcelink.json
