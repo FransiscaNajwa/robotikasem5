@@ -1,0 +1,52 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\SPK\\piano\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{77E53F54-6B98-4B90-9C29-FFB3B72D48FA}|piano\\piano.csproj|d:\\spk\\piano\\piano\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77E53F54-6B98-4B90-9C29-FFB3B72D48FA}|piano\\piano.csproj|solutionrelative:piano\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77E53F54-6B98-4B90-9C29-FFB3B72D48FA}|piano\\piano.csproj|d:\\spk\\piano\\piano\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{77E53F54-6B98-4B90-9C29-FFB3B72D48FA}|piano\\piano.csproj|solutionrelative:piano\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\SPK\\piano\\piano\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "piano\\MainWindow.xaml",
+              "ToolTip": "D:\\SPK\\piano\\piano\\MainWindow.xaml",
+              "RelativeToolTip": "piano\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-17T04:53:44.052Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\SPK\\piano\\piano\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "piano\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\SPK\\piano\\piano\\MainWindow.xaml.cs",
+              "RelativeToolTip": "piano\\MainWindow.xaml.cs",
+              "ViewState": "AgIAALEAAAAAAAAAAAAiwMEAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T04:53:32.99Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

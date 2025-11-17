@@ -587,7 +587,7 @@ namespace polahatiproject
             if (Connect(port!))
             {
                 BtnConnect.IsEnabled = false; BtnDisconnect.IsEnabled = true;
-                SendRawCommand($"#{ch0} P1400 T1000"); SendRawCommand($"#{ch1} P764 T1000");
+                SendRawCommand($"#{ch0} P1400 T1000"); SendRawCommand($"#{ch1} P770 T1000");
                 SendRawCommand($"#{ch2} P1467 T1000"); SendRawCommand($"#{ch3} P1456 T1000");
             }
             else { MessageBox.Show("Gagal membuka port " + port); }
@@ -602,7 +602,7 @@ namespace polahatiproject
         private void BtnOriginPose_Click(object sender, RoutedEventArgs e)
         {
             if (!_isConnected) { MessageBox.Show("Port belum terbuka. Silakan Connect terlebih dahulu."); return; }
-            SendRawCommand($"#{ch0} P1400 T1000"); SendRawCommand($"#{ch1} P764 T1000");
+            SendRawCommand($"#{ch0} P1400 T1000"); SendRawCommand($"#{ch1} P770 T1000");
             SendRawCommand($"#{ch2} P1467 T1000"); SendRawCommand($"#{ch3} P1456 T1000");
         }
 

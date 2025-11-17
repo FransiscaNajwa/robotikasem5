@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "dgSpecHash": "u3N3OTZnUE0=",
+  "success": true,
+  "projectFilePath": "D:\\SPK\\piano\\piano\\piano.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.android-arm.runtime.native.system.io.ports\\10.0.0\\runtime.android-arm.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.android-arm64.runtime.native.system.io.ports\\10.0.0\\runtime.android-arm64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.android-x64.runtime.native.system.io.ports\\10.0.0\\runtime.android-x64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.android-x86.runtime.native.system.io.ports\\10.0.0\\runtime.android-x86.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\10.0.0\\runtime.linux-arm.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\10.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.linux-bionic-arm64.runtime.native.system.io.ports\\10.0.0\\runtime.linux-bionic-arm64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.linux-bionic-x64.runtime.native.system.io.ports\\10.0.0\\runtime.linux-bionic-x64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.linux-musl-arm.runtime.native.system.io.ports\\10.0.0\\runtime.linux-musl-arm.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.linux-musl-arm64.runtime.native.system.io.ports\\10.0.0\\runtime.linux-musl-arm64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.linux-musl-x64.runtime.native.system.io.ports\\10.0.0\\runtime.linux-musl-x64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\10.0.0\\runtime.linux-x64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.maccatalyst-arm64.runtime.native.system.io.ports\\10.0.0\\runtime.maccatalyst-arm64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.maccatalyst-x64.runtime.native.system.io.ports\\10.0.0\\runtime.maccatalyst-x64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.native.system.io.ports\\10.0.0\\runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.osx-arm64.runtime.native.system.io.ports\\10.0.0\\runtime.osx-arm64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\runtime.osx-x64.runtime.native.system.io.ports\\10.0.0\\runtime.osx-x64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\system.io.ports\\10.0.0\\system.io.ports.10.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'LiveCharts 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "LiveCharts",
+      "targetGraphs": [
+        "net9.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'LiveCharts.Wpf 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "LiveCharts.Wpf",
+      "targetGraphs": [
+        "net9.0-windows7.0"
+      ]
+    }
+  ]
+}
